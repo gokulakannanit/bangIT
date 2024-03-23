@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/public/images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="ACTON - IT CONSULTING AND SERVICE" />
+    <meta
+      name="description"
+      content="IT staffing, consulting and services, web development, mobile development, SEO, digital marketing, PHP, JAVA, DOT NET, PYTHON, RUBY"
+    />
+    <meta
+      name="keywords"
+      content="ACTON, ACTON IT COMPANY, Software Company, Software development, IT development, AI computing, IT company, global IT, IT services near me, IT firm, top it companies, Indian IT, IT staffing, consulting and services, web development, mobile development, SEO, digital marketing, PHP, JAVA, DOT NET, PYTHON, RUBY, TEXTAS IT COMPANY, INDIAN IT COMPANY"
+    />
+    <title>ACTON - IT Cosulting and Solutions</title>
+  </head>
+  <body>
+    <div id="app">
+      <header></header>
+      <main></main>
+      <footer></footer>
+    </div>
+    <div class="backdrop"></div>
+    <div class="alert_container flex_box hide" id="alert">
+      <p id="alert_message">
+        Thanks for contacting ACTON IT Consulting company
+      </p>
+    </div>
+    
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      window.onload = () => {
+        window.emailJs = emailjs;
+        console.log(window.emailJs);
+      }
+    </script>
+
+    <script type="module">
+      import { main } from "./public/js/main.js";
+      window.onload = () => {
+        main();
+      };
+    </script>
+  </body>
+</html>

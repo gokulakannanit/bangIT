@@ -1,0 +1,135 @@
+.about_page {
+  .about_us {
+    margin: 30px 0 0;
+  }
+
+  .about_content {
+    display: flex;
+
+    margin: 20px;
+
+    .experience {
+      display: flex;
+
+      span {
+        align-self: center;
+        text-align: left;
+        margin-left: 20px;
+      }
+      .year {
+        font-size: 150px;
+        color: #66ae3e;
+      }
+    }
+
+    .block {
+      text-align: justify;
+      margin: 0 20px;
+      p {
+        margin: 20px 0 20px 80px;
+      }
+    }
+  }
+
+  .about_middle {
+    margin: 50px 0;
+    padding: 50px 0;
+    background-color: #efefef;
+    .content {
+      margin-left: 40px;
+      h1 {
+        font-size: 38px;
+      }
+      p {
+        text-align: justify;
+      }
+    }
+    img {
+      width: 250px;
+      height: 350px;
+      border-radius: 20px;
+      border-left: 4px solid #66ae3e;
+      &:first-child {
+        margin-right: 20px;
+      }
+      &:nth-child(2) {
+        margin-top: 150px;
+      }
+    }
+  }
+
+  .about_final {
+    .block {
+      margin: 30px 0;
+      .message {
+        width: 45%;
+        margin: 20px 0;
+
+        padding: 20px;
+        border-left: 4px solid #66ae3e;
+        background-color: #efefef;
+        div > p {
+          margin-top: 10px;
+          text-align: justify;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .about_page {
+    .about_us {
+      .about_content {
+        flex-wrap: wrap;
+        .experience_block {
+          margin: 0 auto;
+        }
+        .block {
+          margin: 0px;
+          p {
+            margin-left: 0px;
+          }
+        }
+      }
+    }
+
+    .about_middle {
+      .container {
+        flex-wrap: wrap;
+        margin: 0 20px;
+        .flex_box {
+          justify-content: space-around;
+          margin: 0 auto;
+        }
+
+        .content {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 600px) {
+  .about_page {
+    .about_middle {
+      
+      img {
+        width: calc(50% - 20px);
+        &:nth-child(2) {
+          margin-top: 30px;
+        }
+      }
+    }
+
+    .about_final {
+      .block {
+        .message {
+          width: calc(100% - 80px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.portfolio_page {
+  .portfolio {
+    margin: 30px 0 0;
+
+    .menu {
+      width: calc(100% - 40px); 
+      max-width: 500px;
+      margin: 50px auto;
+      a {
+        display: inline-block;
+        font-weight: bold;
+        padding-bottom: 10px;
+        cursor: pointer;
+        min-width: 100px;
+
+        &.selected,
+        &:hover {
+          color: #66ae3e;
+          position: relative;
+        }
+
+        &.selected::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          border-bottom: 4px solid #66ae3e;
+          animation: incWidth 0.5s ease-in-out;
+        }
+      }
+    }
+    .portfolio_thumb {
+      width: calc(30% - 60px);
+      min-width: 320px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      margin: 20px;
+      text-align: left;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+
+      p,
+      h3,
+      h4 {
+        margin: 0 20px;
+      }
+
+      p {
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .menu {
+    flex-wrap: wrap;
+    a {
+      margin-top: 20px;
+    }
+  }
+  .portfolio_list {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
