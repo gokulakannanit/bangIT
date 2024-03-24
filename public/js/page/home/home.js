@@ -34,8 +34,19 @@ const aboutHTML = (({title, desc, block, list}) =>{
           <h3 class="font_primary title_highlight">${title}</h3>
           <h1 class="font_xxl">${desc}</h1>
           <p>${block}</p>
-          <ul>
-            ${list.map(({title, desc})=>`<li><h2>${title}</h2><p>${desc}</p></li>`).join("")}
+          <ul class="list">
+            ${list?.map(({title, desc})=>{
+              return `
+                <li class="flex_box">
+                  <p class="font_primary">
+                    <i class="fa fa-check"></i>
+                  </p>
+                  <div>
+                    <h2>${title}</h2>
+                    <p>${desc}</p>
+                  </div>
+                </li>`
+            }).join("")}
           </ul>
         </div>
       </section>

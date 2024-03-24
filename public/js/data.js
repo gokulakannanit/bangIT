@@ -36,8 +36,11 @@ export const HomeContent = {
   about:{
     title: "WHAT WE DO",
     desc: "Product Development for Better Business",
-    block: "We are privileged to work with hundreds of future-thinking businesses, including many of the world’s top hardware, software, and brands."
-    
+    block: "We are privileged to work with hundreds of future-thinking businesses, including many of the world’s top hardware, software, and brands.",
+    list: [
+      {title: "DevOps Development", desc: "We provide DevOps consulting services to help our customers adapt to an environment."},
+      {title: "Automated Software", desc: "We use the latest technologies, toolkits, and modern software development practices."}
+    ]
   }
 };
 

@@ -97,6 +97,15 @@
     .content {
       width: 45%;
 
+      .list{
+        li{
+          margin: 20px 0;
+          p {
+            padding: 10px 10px 0 0;
+          }
+        }
+      }
+
       .title_highlight {
         position: relative;
         z-index: 1;
