@@ -1,17 +1,7 @@
-import { clientHTML } from "../../components/client/client.js";
-import { BannerService, HomeContent, bannerImages } from "../../data.js";
+import { HomeContent } from "../../data.js";
 import { loadCss, util } from "../../util.js";
 
 loadCss("/public/js/page/home/home.css");
-
-const numberHTML = `
-<section class="numbers flex_box animation">
-   ${BannerService.map(
-     (item) =>
-       `<div class="list flex_box"><img alt="" src="${item.image}" /><div><h2>${item.title}</h2><p>${item.desc}</p></div></div>`
-   ).join("")}
-</section>
-`;
 
 const bannerHTML = `
 <section class="banner animation">
@@ -33,82 +23,30 @@ const bannerHTML = `
 </section>
 `;
 
-const aboutHTML = `
-<section class="about flex_box container" id="about">
-      <div class="about_right flex_box">
-        <img alt="" src="/public/images/ab-1.png" class="anim" />
-        <img alt="" src="/public/images/ab-2.png" class="anim" />
-        <div class="block anim">
-          <h2 class="align_center"${HomeContent.about.block1}</h2>
+const aboutHTML = (({title, desc, block, list}){
+  return `
+  <section class="about flex_box container" id="about">
+        <div class="about_right flex_box">
+          <img alt="" src="/public/images/ab2.png" class="anim" />
+          <img alt="" src="/public/images/ab1.png" class="anim" />
         </div>
-        <div class="block anim">
-          <h3>${HomeContent.about.block2}</h3>
+        <div class="content">
+          <h3 class="font_primary title_highlight">${title}</h3>
+          <h1 class="font_xxl">${desc}</h1>
+          <p>${block}</p>
+          <ul>
+            ${list.map(({title, desc})=>`<li><h2>${title}</h2><p>${desc}</p></li>`).join("")}
+          </ul>
         </div>
-      </div>
-      <div class="content">
-        <h1>${HomeContent.about.title}</h1>
-        ${HomeContent.about.desc.map((item) => `<p>${item}</p>`).join("")}
-      </div>
-    </section>
-`;
+      </section>
+  `
+})(HomeContent.about);
 
-const serviceHTML = `
-<section class="service service_section">
-    <section class="service_list container align_center">
-        <h3 class="font_primary anim">${HomeContent.service.title}</h3>
-        <h2 class="anim">${HomeContent.service.description}</h2>
-        <div class="flex_box" style="clear: both; margin: 50px 0">
-            ${HomeContent.service.serviceList
-              .map(
-                (item) =>
-                  `<div class="service_list_item">
-                        <img alt="" src="${item.image}" />
-                        <h3>${item.title}</h3>
-                        <p>${item.description}</p>
-                    </div>`
-              )
-              .join("")}
-        </div>
-    </section>
-</section>
-`;
-
-const testimonialHTML = `
-<section class="testimonial container">
-    <h3 class="align_center font_primary">${HomeContent.testimonial.title}</h3>
-    <h2 class="align_center">${HomeContent.testimonial.desc}</h2>
-    <div class="list flex_box">
-    ${HomeContent.testimonial.messages
-      .map(
-        (item) => `<div class="list_item">
-          <div class="flex_box avatar">
-              <img alt="" src="${item.avatar}" />
-              <div>
-                  <h3>${item.name}</h3>
-                  <p>${item.status}</p>
-                  <p class="star">
-                      ${[1, 2, 3, 4, 5]
-                        .map(
-                          (index) =>
-                            `<i class="fa fa-star ${
-                              index <= item.rating ? "checked" : ""
-                            }"></i>`
-                        )
-                        .join("")}
-                  </p>
-              </div>
-          </div>
-          <p class="description">${item.message}</p>
-          </div>`
-      )
-      .join("")}
-    </div>
-</section>
-`;
 
 const htmlString = `
  <section class="home">
     ${bannerHTML}
+    ${aboutHTML}
  </section>
 `;
 

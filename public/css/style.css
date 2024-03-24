@@ -274,3 +274,8 @@ main {
 .show {
   display: initial;
 }
+
+.font_xxl {
+  font-size: 40px;
+  margin: 20px 0;
+}

@@ -11,7 +11,7 @@ export const bannerImages = ["1.png", "2.png", "3.png", "4.png"];
 
 export const contactInfo = {
   email: "hr@bangIT.com",
-  phone: "+12 343 34343",
+  phone: "+12 343 34343", 
 };
 
 export const BannerService = [
@@ -33,81 +33,12 @@ export const BannerService = [
 ];
 
 export const HomeContent = {
-  about: {
-    title: "We are crafting your specific business thoughts.",
-    block2: "The Perfect Solutions For All IT Solutions and Service",
-    block1: ">15+ years <br />Experience",
-    desc: [
-      "ACTON is a globally recognized leader in Business and Policy Advocacy for the SMEs of USA and India through the creation of an inclusive bilateral trade and commerce environment through Education, Training, Events and Public Affairs",
-      "The U.S India SME Council is one stop resource center for small businesses. Small businesses are the source of Three-quarters of all new jobs and are the engines that fuel our Nation’s economy. The SME  Council leadership is Committed to play a vital role to assist, protect, and advocate on behalf of small business-and are dedicated to Serve the unique business, and technical needs of the small business community through education, management, Training, business development programs.",
-      "The Council aims to create an inclusive bilateral trade & Commerce environment between India SMEs and United States SMEs by serving as the voice of SMEs, connecting government to businesses and supporting long term commercial partnership that will create jobs and economic growth.",
-    ],
-  },
-  service: {
-    title: "Our Service",
-    description: "We Provide Our Client Best <br />IT Solution Services",
-    serviceList: [
-      {
-        image: "/public/images/service/mobile.jpg",
-        title: "Mobile Developement",
-        description:
-          "We provide the best custom application development solution with the latest technology for Android and iOS devices.",
-      },
-      {
-        image: "/public/images/service/web.jpg",
-        title: "Web Developement",
-        description:
-          "We design and build industry-leading web-based products that bring value to your customers, delivered with compelling UX.",
-      },
-      {
-        image: "/public/images/service/qa.jpg",
-        title: "Quality Assurance & Testing",
-        description:
-          "Build high quality products, on-time and within budget, with Quality Assurance and Testing services from ACTON.",
-      },
-      {
-        image: "/public/images/service/hoa.jpg",
-        title: "HOA Development",
-        description:
-          "We offer custom HOA software to help the associations to plan the monthly budget, manage dues, organize documents.",
-      },
-    ],
-  },
-  testimonial: {
-    title: "Testimonial",
-    desc: "What Clients Talk About Us",
-    messages: [
-      {
-        name: "Ismail Chouduri",
-        avatar: "/public/images/avatar1.png",
-        rating: 3,
-        status: "Regular Customer",
-        message:
-          "ACTON undertakes its role with a vision and passion that goes beyond the narrow mission of human resources. Moreover ACTON is proactive and focuses on an integrated approach that reflects a deep sense of commitment on achieving the clients objectives in both short and long term time frames.",
-      },
-      {
-        name: "Ismail Chouduri",
-        avatar: "/public/images/avatar2.png",
-        rating: 3,
-        status: "Regular Customer",
-        message:
-          "I had the pleasure of working exclusively with ACTON for the past 4 years. I consider ACTON having unprecedented integrity within this industry in terms of reference checking and honest feedback about candidates. ACTON has always helped me finding the perfect match whether technically or behaviorally.",
-      },
-    ],
-  },
-  client: {
-    title: "Our Clients",
-    desc: "We are the go to partner for digital architecture & platforms <br/>to the world's largest brands.",
-    list: [
-      "/public/images/client/logo1.png",
-      "/public/images/client/logo2.png",
-      "/public/images/client/logo3.png",
-      "/public/images/client/logo4.png",
-      "/public/images/client/logo5.png",
-      "/public/images/client/logo6.png",
-      "/public/images/client/logo7.jpg",
-    ],
-  },
+  about:{
+    title: "WHAT WE DO",
+    desc: "Product Development for Better Business",
+    block: "We are privileged to work with hundreds of future-thinking businesses, including many of the world’s top hardware, software, and brands."
+    
+  }
 };
 
 export const ServiceContent = {
