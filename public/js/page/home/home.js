@@ -23,7 +23,7 @@ const bannerHTML = `
 </section>
 `;
 
-const aboutHTML = (({title, desc, block, list}){
+const aboutHTML = (({title, desc, block, list}) =>{
   return `
   <section class="about flex_box container" id="about">
         <div class="about_right flex_box">
