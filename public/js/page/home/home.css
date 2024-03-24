@@ -81,55 +81,28 @@
   }
 
 }
+@media (max-width: 900px) {
+  .home {
+    .banner {
+      height: 450px;
+      .banner_message {
+        top: 10px;
+        left: 10px;
+        padding: 10px;
+        width: calc(100% - 30px);
+        p.message {
+          padding: 20px 10px 0 0;
+        }
+      }
+    }
+  }
+}
 
 @media (max-width: 1024px) {
   .home {
-    .numbers {
-      flex-direction: column;
-
-      & > div.list {
-        position: absolute;
-        top: 0;
-        border-radius: 0;
-      }
-      &.animation {
-        & > div.list {
-          animation: none;
-        }
-      }
-    }
-
-    .about {
-      flex-direction: column;
-      margin-top: 80px;
-
-      .about_right {
-        width: 100%;
-        margin-bottom: 30px;
-      }
-    }
-
-    .service {
-      .flex_box {
-        padding: 20px;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        .service_list_item {
-          min-width: 320px;
-          margin-top: 20px;
-        }
-      }
-    }
-
-    .testimonial {
-      .list {
-        flex-wrap: wrap;
-        justify-content: space-around;
-
-        .list_item {
-          min-width: 320px;
-          margin-top: 20px;
-        }
+    .banner {
+      img.man {
+        display: none;
       }
     }
   }
