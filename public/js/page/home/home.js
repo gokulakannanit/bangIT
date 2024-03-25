@@ -6,7 +6,7 @@ loadCss("/public/js/page/home/home.css");
 const bannerHTML = `
 <section class="banner animation">
     <div class="banner_images">
-      <img alt="" src="/public/images/banner/2.png" class="scale_anim" />
+      <img loading="lazy" alt="" src="/public/images/banner/2.png" class="scale_anim" />
     </div>
     <div class="container">
       <div class="banner_message">
@@ -18,17 +18,17 @@ const bannerHTML = `
           </p>
           <a href="#about" class="simple">Learn More</a>
       </div>
-      <img alt="" src="/public/images/banner/man.png" class="man" />
+      <img loading="lazy" alt="" src="/public/images/banner/man.png" class="man" />
     </div>
 </section>
 `;
 
 const aboutHTML = (({title, desc, block, list}) =>{
   return `
-  <section class="about flex_box container" id="about">
-        <div class="about_right flex_box">
-          <img alt="" src="/public/images/ab2.png" class="anim" />
-          <img alt="" src="/public/images/ab1.png" class="anim" />
+  <section class="about flex_box container animation" id="about">
+        <div class="about_right">
+          <img loading="lazy" alt="" src="/public/images/ab2.png" />
+          <img loading="lazy" alt="" src="/public/images/ab1.png" />
         </div>
         <div class="content">
           <h3 class="font_primary title_highlight">${title}</h3>
