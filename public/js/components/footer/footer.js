@@ -28,10 +28,10 @@ const htmlString = `
                 <h3 class="font_primary">Contact Info</h3>
                 <ul>
                     <li>
-                        <a href="tel:" class="address"> <i class="fa fa-phone"></i><span>(123) 45678910</span> </a>
+                        <a href="tel:" class="address"> <i class="fa fa-phone"></i><span>(123) 45678910</span></a>
                     </li>
                     <li>
-                        <a href="mailto:hr@actonitservices.com" class="address"> <i class="fa fa-envelope"></i>hr@actonitservices.com </a>
+                        <a href="mailto:hr@actonitservices.com" class="address"> <i class="fa fa-envelope"></i><span>hr@actonitservices.com</span></a>
                     </li>
                     <li>
                         <a href="" class="address flex_box">

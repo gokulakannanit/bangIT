@@ -19,11 +19,12 @@
       display: inline-block;
       color: var(--dark-font);
       text-align: left;
-      vertical-align: middle;
+      vertical-align: top;
+      margin-top: 10px;
       span {
         display: inline-block;
         line-height: 30px;
-        vertical-align: middle;
+        vertical-align: top;
       }
     }
   }
