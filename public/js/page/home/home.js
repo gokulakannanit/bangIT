@@ -1,3 +1,4 @@
+import { Slider } from "../../components/slider/slider.js";
 import { HomeContent } from "../../data.js";
 import { loadCss, util } from "../../util.js";
 
@@ -23,7 +24,7 @@ const bannerHTML = `
 </section>
 `;
 
-const aboutHTML = (({title, desc, block, list}) =>{
+const aboutHTML = (({ title, desc, block, list }) => {
   return `
   <section class="about flex_box container animation" id="about">
         <div class="about_right">
@@ -35,8 +36,9 @@ const aboutHTML = (({title, desc, block, list}) =>{
           <h1 class="font_xxl">${desc}</h1>
           <p>${block}</p>
           <ul class="list">
-            ${list?.map(({title, desc})=>{
-              return `
+            ${list
+              ?.map(({ title, desc }) => {
+                return `
                 <li class="flex_box">
                   <p class="font_primary">
                     <i class="fa fa-check"></i>
@@ -45,19 +47,67 @@ const aboutHTML = (({title, desc, block, list}) =>{
                     <h2>${title}</h2>
                     <p>${desc}</p>
                   </div>
-                </li>`
-            }).join("")}
+                </li>`;
+              })
+              .join("")}
           </ul>
         </div>
       </section>
-  `
+  `;
 })(HomeContent.about);
 
+const serviceHTML = (({ title, desc, block }) => {
+  return `
+    <section class="service">
+      <div class="container">
+        <h3 class="font_primary title_highlight dark">${title}</h3>
+        <div class="content flex_box">
+          <h1 class="font_xxl">${desc}</h1>
+          <p>${block}</p>
+        </div>
+        <p class="service_list"></p>
+      </div>
+    </section>
+  `;
+})(HomeContent.service);
+
+const testimonialHTML = (({ title, desc }) => {
+  return `
+    <section class="testimonial container">
+      <h3 class="font_primary title_highlight">${title}</h3>
+      <h1 class="font_xxl">${desc}</h1>
+      <p class="testimonial_list"></p>
+    </section>
+  `;
+})(HomeContent.testimonial);
+
+const benefitsHTML = (({ title, desc, block, list }) => {
+  return `
+    <section class="benefits container">
+      <h3 class="font_primary title_highlight">${title}</h3>
+      <h1 class="font_xxl">${desc}</h1>
+      <p class="block">${block}</p>
+      <div class="content flex_box">
+        ${list.map(item=>{
+          return `<div>
+            <h3 class="font_primary">${item.title}</h3>
+            <p>${item.desc}</p>
+            <p>${item.block}</p>
+        </div>`
+        }).join("")}
+        
+      </div>
+    </section>
+  `;
+})(HomeContent.benefits);
 
 const htmlString = `
  <section class="home">
     ${bannerHTML}
     ${aboutHTML}
+    ${serviceHTML}
+    ${benefitsHTML}
+    ${testimonialHTML}
  </section>
 `;
 
@@ -78,14 +128,59 @@ export default (main) => {
     isFirstTime = false;
   };
 
-  const startBannerAnimation = () => {
+  const serviceListHTML = (item) => {
+    return `<div class="list_item">
+          <img alt="" src="${item.image}" />
+          <h3 class="overlay">${item.title}</h3>
+        </div>`;
+  };
+
+  const testimonialListHTML = (item) => {
+    return `<div class="list_item flex_box">
+          <div class="left_content">
+            <img alt="" src="${item.image}" width="150px" height="150px" />
+            <div class="quote">
+              <i class="fa fa-quote-left font_primary"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="font_primary">${item.name}</h3>
+            <h3>${item.place}</h3>
+            <p class="star">
+              ${[1, 2, 3, 4, 5]
+                .map(
+                  (index) =>
+                    `<i class="fa fa-star ${
+                      index <= item.rating ? "checked" : ""
+                    }"></i>`
+                )
+                .join("")}
+            </p>
+            <p>${item.desc}</p>
+          </div>
+        </div>`;
+  };
+
+  const onInit = () => {
+    Slider(
+      utils.getEle(".service_list"),
+      HomeContent.service.list,
+      serviceListHTML,
+      360,
+      200
+    );
+    Slider(
+      utils.getEle(".testimonial_list"),
+      HomeContent.testimonial.list,
+      testimonialListHTML
+    );
     utils.onScroll(onScroll);
   };
 
   return {
     load: () => {
       utils.adddHtml(main, htmlString);
-      startBannerAnimation();
+      setTimeout(onInit, 300);
     },
   };
 };

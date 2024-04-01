@@ -11,37 +11,113 @@ export const bannerImages = ["1.png", "2.png", "3.png", "4.png"];
 
 export const contactInfo = {
   email: "hr@bangIT.com",
-  phone: "+12 343 34343", 
+  phone: "+12 343 34343",
 };
 
-export const BannerService = [
-  {
-    title: "Mobile Developement",
-    image: "/public/images/icons/developer.svg",
-    desc: "We provide the best custom application development solution with the latest technology for Android and iOS devices.",
-  },
-  {
-    title: "Web Developement",
-    image: "/public/images/icons/web.svg",
-    desc: "We design and build industry-leading web-based products that bring value to your customers, delivered with compelling UX.",
-  },
-  {
-    title: "HOA Development",
-    image: "/public/images/icons/home.png",
-    desc: "We offer custom HOA software to help the associations to plan the monthly budget, manage dues, organize documents.",
-  },
-];
-
 export const HomeContent = {
-  about:{
-    title: "WHAT WE DO",
+  about: {
+    title: "WHAT WE DO FOR YOU",
     desc: "Product Development for Better Business",
-    block: "We are privileged to work with hundreds of future-thinking businesses, including many of the world’s top hardware, software, and brands.",
+    block:
+      "We are privileged to work with hundreds of future-thinking businesses, including many of the world’s top hardware, software, and brands.",
     list: [
-      {title: "DevOps Development", desc: "We provide DevOps consulting services to help our customers adapt to an environment."},
-      {title: "Automated Software", desc: "We use the latest technologies, toolkits, and modern software development practices."}
-    ]
-  }
+      {
+        title: "DevOps Development",
+        desc: "We provide DevOps consulting services to help our customers adapt to an environment.",
+      },
+      {
+        title: "Automated Software",
+        desc: "We use the latest technologies, toolkits, and modern software development practices.",
+      },
+    ],
+  },
+  service: {
+    title: "AREAS WHAT WE SERV",
+    desc: "We can inspire and Offer Different Services",
+    block:
+      "Our services encompass a spectrum of expertise, from robust cybersecurity and seamless cloud integration to tailored software development and strategic technology consulting.",
+    list: [
+      {
+        image: "/public/images/service/web_dev.jpg",
+        title: "Web Developement",
+        desc: "We provide DevOps consulting services to help our customers adapt to an environment.",
+      },
+      {
+        image: "/public/images/service/mobile.jpg",
+        title: "Mobile Development",
+        desc: "We use the latest technologies, toolkits, and modern software development practices.",
+      },
+      {
+        image: "/public/images/service/AS.jpg",
+        title: "Quality Assurance & Testing",
+        desc: "We use the latest technologies, toolkits, and modern software development practices.",
+      },
+      {
+        image: "/public/images/service/mobile.jpg",
+        title: "Mobile Development",
+        desc: "We use the latest technologies, toolkits, and modern software development practices.",
+      },
+    ],
+  },
+  benefits: {
+    title: "REASON TO CHOOSE US",
+    desc: "Preparing for your success, <br/>We provide truly prominent IT solutions.",
+    block:
+      "AS A TOP-RANKED AND TRUSTED SOFTWARE DEVELOPMENT COMPANY, WE RUN A POOL OF PROFICIENT IT EXPERTS AND USE THE BEST AVAILABLE TOOLS AND TECHNIQUES TO ENGINEER ADVANCED SOFTWARE FOR OUR CUSTOMERS.",
+    list: [
+      {
+        title: "Retail & Digital Commerce",
+        desc: "We fuel and transform the digital ecosystems that power modern retail and digital commerce companies.",
+        block:
+          "We are providing the following in retail industry Digital Commerce Transformation, Digital Experience Engineering and Omnichannel.",
+      },
+      {
+        title: "Digital Transformation",
+        desc: "BangIT is where bold innovation meets digital evolution. We're not just adapting to the digital marketplace; we're rewriting its rules. Our approach is unapologetically customer-first, blending disruptive tech with intuitive design.",
+        block:
+          "We follow Data-Driven Strategy, Design Thinking Philosophy, End-to-End Transformation Expertise and Roadmaps, Future Architecture & Transformation Plans.",
+      },
+      {
+        title: "MACH-Powered Solutions",
+        desc: "MACH Architecture is a game-changer. It's a bold fusion of Microservices, API-first, Cloud-native, and Headless technologies, designed to thrust businesses into the future of digital agility. We're not just building platforms; we're engineering digital powerhouses.",
+        block:
+          "We provide Customization to your Ecosystem & Pace, Prebuilt Accelerators & Frameworks and Out-of-the-box Integration with Leading Platforms",
+      },
+      {
+        title: "Application & Platform Development",
+        desc: "We don't just build apps or platforms; we forge digital experiences that capture imaginations and push boundaries. Our creations are a fusion of sleek, user-centric design and powerhouse performance, tailored for iOS and Android landscapes.",
+        block:
+          "We provide Advanced UX/UI Research, Agile Development Process, Integration with IoT, AI, ML and AR Solutions and Native & Cross-Platform App Development.",
+      },
+    ],
+  },
+  testimonial: {
+    title: "WHAT OUR CLIENT SAYS",
+    desc: "People who already love our work",
+    list: [
+      {
+        name: "Jane Cooper",
+        place: "Los Angeles, USA",
+        rating: 5,
+        image: "/public/images/testimonial/av1.jpg",
+        desc: "This tech startup transformed our business with game-changing solutions, streamlining operations, automating processes, and boosting efficiency. Their expertise and dedication were remarkable.",
+      },
+      {
+        name: "Robert Fox",
+        place: "Los Angeles, USA",
+        rating: 4,
+        image: "/public/images/testimonial/av2.jpg",
+        desc: "The tech startup's product has revolutionized our business, boosting customer engagement and revenue. Their understanding and support make them highly recommended.",
+      },
+      {
+        name: "Robert Fox",
+        place: "Los Angeles, USA",
+        rating: 4,
+        image: "/public/images/testimonial/av2.jpg",
+        desc: "The tech startup's product has revolutionized our business, boosting customer engagement and revenue. Their understanding and support make them highly recommended.",
+      },
+    ],
+  },
 };
 
 export const ServiceContent = {

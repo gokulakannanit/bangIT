@@ -82,3 +82,25 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  footer {
+    .footer_info {
+      &:first-child {
+        .logo {
+          img {
+            width: 160px;
+          }
+        }
+        .follow {
+          margin:0;
+        }
+      }
+
+      &:nth-child(2) {
+        padding: 0 20px;
+      }
+      
+    }
+  }
+}

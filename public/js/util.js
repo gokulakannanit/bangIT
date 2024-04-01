@@ -86,8 +86,8 @@ export const util = () => {
     },
     removeBackdrop: () => util().removeClass(backdrop, "show"),
     adddHtml: (ele, htmlString) => (ele.innerHTML = htmlString),
-    getEle: (selector) => document.querySelector(selector),
-    getEleAll: (selector) => document.querySelectorAll(selector),
+    getEle: (selector, ele = document) => ele.querySelector(selector),
+    getEleAll: (selector, ele = document) => ele.querySelectorAll(selector),
     removeClass: (ele, className) => ele?.classList.remove(className),
     addClass: (ele, className) => ele?.classList.add(className),
     addClassIf: (ele, className, condition) =>
