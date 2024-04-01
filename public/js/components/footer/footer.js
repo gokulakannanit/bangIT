@@ -31,15 +31,12 @@ const htmlString = `
                         <a href="tel:" class="address"> <i class="fa fa-phone"></i><span>(123) 45678910</span></a>
                     </li>
                     <li>
-                        <a href="mailto:hr@actonitservices.com" class="address"> <i class="fa fa-envelope"></i><span>hr@actonitservices.com</span></a>
+                        <a href="mailto:hr@actonitservices.com" class="address"> <i class="fa fa-envelope"></i><span>&nbsphr@actonitservices.com</span></a>
                     </li>
                     <li>
                         <a href="" class="address flex_box">
                             <i class="fa fa-map-marker"></i>
-                            <span>
-                                267 Park Avenue <br />
-                                New York, NY 90210
-                            </span>
+                            <span>267 Park Avenue <br /> New York, NY 90210</span>
                         </a>
                     </li>
                 </ul>

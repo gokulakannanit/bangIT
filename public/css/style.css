@@ -4,7 +4,7 @@
 :root {
   font-family: "Poppins";
   font-size: 16px;
-  --primary_color: #FD7400;
+  --primary_color: #fd7400;
   --light_bg: #efefef;
   --very_light_bg: #ececec;
   --dark_font: #222;
@@ -251,13 +251,13 @@ main {
   min-height: 600px;
   position: relative;
 
-  &.loading{
-    > section{
+  &.loading {
+    > section {
       opacity: 0;
     }
-    &:before{
+    &:before {
       position: fixed;
-      content: '';
+      content: "";
       width: 100%;
       border-bottom: 4px solid var(--primary_color);
       animation: scaleright 1s linear infinite;
@@ -274,7 +274,7 @@ main {
   }
   100% {
     width: 100%;
-  }  
+  }
 }
 
 .show {
