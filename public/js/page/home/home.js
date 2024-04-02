@@ -154,7 +154,7 @@ export default (main) => {
   let isFirstTime = true;
 
   const onScroll = () => {
-    const element = [".about", ".service", ".benefits", ".testimonial"];
+    const element = [".about", ".service", ".benefits", ".testimonial", ".portfolio"];
 
     element.map((className) => {
       const ele = utils.getEle(className);
@@ -168,7 +168,7 @@ export default (main) => {
 
   const serviceListHTML = (item) => {
     return `<div class="list_item">
-          <img alt="" src="${item.image}" />
+          <img loading="lazy" alt="" src="${item.image}" />
           <h3 class="overlay">${item.title}</h3>
         </div>`;
   };
@@ -177,7 +177,7 @@ export default (main) => {
     return `<div class="list_item flex_box">
           <div class="flex_box">
             <div class="left_content">
-              <img alt="" src="${item.image}" width="150px" height="150px" />
+              <img loading="lazy" alt="" src="${item.image}" width="150px" height="150px" />
               <div class="quote">
                 <i class="fa fa-quote-left font_primary"></i>
               </div>
@@ -203,7 +203,7 @@ export default (main) => {
 
   const portfolioListHTML = (item) => {
     return `<div class="list_item">
-          <img alt="" src="${item.image}" />
+          <img loading="lazy" alt="" src="${item.image}" />
           <div class="overlay">
             <h3>${item.title}</h3>
             <p>${item.desc}</p>

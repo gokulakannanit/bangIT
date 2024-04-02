@@ -351,8 +351,9 @@
         animation: moveFromLeft 1s ease-in-out;
       }
       .content > div {
-        transform: scale(1);
-        animation: expandAnim 1s ease-in-out;
+        transform: scaleX(1);
+        opacity: 1;
+        animation: skewAnim 1s ease-in-out;
       }
     }
   }
@@ -426,6 +427,15 @@
           .overlay {
             bottom: 80px;
           }
+        }
+      }
+    }
+    &.animation {
+      .list {
+        .list_item {
+          transform: scaleX(1);
+          opacity: 1;
+          animation: skewAnim 1s ease-in-out;
         }
       }
     }
@@ -549,6 +559,20 @@
   }
   100% {
     bottom: 0;
+  }
+}
+@keyframes skewAnim {
+  0% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleX(-1);
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
   }
 }
 
