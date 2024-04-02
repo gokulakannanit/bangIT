@@ -99,7 +99,7 @@ export const util = () => {
         ? ele?.classList.remove(className)
         : ele?.classList.add(className),
     isSeen: (el) =>
-      el?.getBoundingClientRect().bottom - 100 <= window.innerHeight,
+      (el?.getBoundingClientRect().top + (el?.getBoundingClientRect().bottom - el?.getBoundingClientRect().top)/2) <= window.innerHeight,
     onScroll: addScrollFn,
   };
 };

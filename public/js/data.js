@@ -91,6 +91,30 @@ export const HomeContent = {
       },
     ],
   },
+  portfolio: {
+    title: "RECENT WORKS",
+    desc: "Our Portfolio",
+    list: [
+      {
+        title: "Retail & Digital Commerce",
+        desc: "We provide Advanced UX/UI Research, Agile Development Process, Integration with IoT, AI, ML and AR Solutions and Native",
+        type: "retail",
+        image: "/public/images/service/AS.jpg"
+      },
+      {
+        title: "Retail & Digital Commerce",
+        desc: "We provide Advanced UX/UI Research, Agile Development Process, Integration with IoT, AI, ML and AR Solutions and Native",
+        type: "retail",
+        image: "/public/images/service/AI.jpg"
+      },
+      {
+        title: "Retail & Digital Commerce",
+        desc: "We provide Advanced UX/UI Research, Agile Development Process, Integration with IoT, AI, ML and AR Solutions and Native",
+        type: "retail",
+        image: "/public/images/service/AS.jpg"
+      },
+    ],
+  },
   testimonial: {
     title: "WHAT OUR CLIENT SAYS",
     desc: "People who already love our work",

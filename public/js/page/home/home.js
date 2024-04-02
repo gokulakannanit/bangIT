@@ -101,12 +101,31 @@ const benefitsHTML = (({ title, desc, block, list }) => {
   `;
 })(HomeContent.benefits);
 
+const portfolioHTML = (({ title, desc, list }) => {
+  return `
+    <section class="portfolio">
+      <div class="container">
+        <h3 class="font_primary align_center">${title}</h3>
+        <h1 class="font_xxl align_center">${desc}</h1>
+        <div class="tags">
+            ${list.reduce((arr, item)=>{
+              !arr.includes(item.type) && arr.push(item.type);
+              return arr;
+            }, ["all"]).map(item=>`<div>${item}</div>`).join("")}
+        </div>
+        <div class="list"></div>
+      </div>
+    </section>
+  `;
+})(HomeContent.portfolio);
+
 const htmlString = `
  <section class="home">
     ${bannerHTML}
     ${aboutHTML}
     ${serviceHTML}
     ${benefitsHTML}
+    ${portfolioHTML}
     ${testimonialHTML}
  </section>
 `;
@@ -116,7 +135,7 @@ export default (main) => {
   let isFirstTime = true;
 
   const onScroll = () => {
-    const element = [".about", ".service_section"];
+    const element = [".about", ".service", ".benefits", ".testimonial"];
 
     element.map((className) => {
       const ele = utils.getEle(className);
@@ -161,6 +180,16 @@ export default (main) => {
         </div>`;
   };
 
+  const portfolioListHTML = (item) => {
+    return `<div class="list_item">
+          <img alt="" src="${item.image}" />
+          <div class="overlay">
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+          </div>
+        </div>`;
+  };
+
   const onInit = () => {
     Slider(
       utils.getEle(".service_list"),
@@ -173,6 +202,13 @@ export default (main) => {
       utils.getEle(".testimonial_list"),
       HomeContent.testimonial.list,
       testimonialListHTML
+    );
+    Slider(
+      utils.getEle(".portfolio .list"),
+      HomeContent.portfolio.list,
+      portfolioListHTML,
+      360,
+      420
     );
     utils.onScroll(onScroll);
   };
