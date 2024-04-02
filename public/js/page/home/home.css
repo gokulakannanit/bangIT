@@ -353,7 +353,7 @@
       .content > div {
         transform: scaleX(1);
         opacity: 1;
-        animation: skewAnim 1s ease-in-out;
+        animation: skewAnimTwo .5s ease-in-out;
       }
     }
   }
@@ -436,7 +436,7 @@
         .list_item {
           transform: scaleX(1);
           opacity: 1;
-          animation: skewAnim 1s ease-in-out;
+          animation: skewAnim .7s ease-in-out;
         }
       }
     }
@@ -560,6 +560,16 @@
   }
   100% {
     bottom: 0;
+  }
+}
+@keyframes skewAnimTwo {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
   }
 }
 @keyframes skewAnim {
