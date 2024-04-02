@@ -358,6 +358,7 @@
   }
 
   .portfolio {
+    margin: 40px auto 0;
     padding: 40px 20px 0;
     background-image: url("/public/images/banner/2.png");
     h1 {
@@ -370,10 +371,15 @@
       > div {
         border-radius: 8px;
         min-width: 100px;
-        text-transform: capitalize;
+        text-transform: uppercase;
         text-align: center;
         background-color: var(--light_bg);
         padding: 10px;
+        cursor: pointer;
+        &.selected {
+          background-color: var(--primary_color);
+          color: var(--light_bg)
+        }
       }
     }
 

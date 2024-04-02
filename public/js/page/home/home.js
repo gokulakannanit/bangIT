@@ -4,6 +4,8 @@ import { loadCss, util } from "../../util.js";
 
 loadCss("/public/js/page/home/home.css");
 
+let selectedTag = "all";
+
 const bannerHTML = `
 <section class="banner animation">
     <div class="banner_images">
@@ -88,18 +90,23 @@ const benefitsHTML = (({ title, desc, block, list }) => {
       <h1 class="font_xxl">${desc}</h1>
       <p class="block">${block}</p>
       <div class="content flex_box">
-        ${list.map(item=>{
-          return `<div>
+        ${list
+          .map((item) => {
+            return `<div>
             <h3 class="font_primary">${item.title}</h3>
             <p>${item.desc}</p>
             <p>${item.block}</p>
-        </div>`
-        }).join("")}
+        </div>`;
+          })
+          .join("")}
         
       </div>
     </section>
   `;
 })(HomeContent.benefits);
+
+const checkArray = (arr, greateThan = 2) =>
+  arr.length > greateThan ? arr : [];
 
 const portfolioHTML = (({ title, desc, list }) => {
   return `
@@ -108,10 +115,22 @@ const portfolioHTML = (({ title, desc, list }) => {
         <h3 class="font_primary align_center">${title}</h3>
         <h1 class="font_xxl align_center">${desc}</h1>
         <div class="tags">
-            ${list.reduce((arr, item)=>{
-              !arr.includes(item.type) && arr.push(item.type);
-              return arr;
-            }, ["all"]).map(item=>`<div>${item}</div>`).join("")}
+            ${checkArray(
+              list.reduce(
+                (arr, item) => {
+                  !arr.includes(item.type) && arr.push(item.type);
+                  return arr;
+                },
+                ["all"]
+              )
+            )
+              .map((item) => {
+                console.log(item.toLowerCase(), " = ", selectedTag);
+                return selectedTag === item.toLowerCase()
+                  ? `<div class="selected">${item}</div>`
+                  : `<div>${item}</div>`;
+              })
+              .join("")}
         </div>
         <div class="list"></div>
       </div>
@@ -190,6 +209,10 @@ export default (main) => {
         </div>`;
   };
 
+  const loadPortfolio = (list) => {
+    Slider(utils.getEle(".portfolio .list"), list, portfolioListHTML, 360, 420);
+  };
+
   const onInit = () => {
     Slider(
       utils.getEle(".service_list"),
@@ -203,12 +226,24 @@ export default (main) => {
       HomeContent.testimonial.list,
       testimonialListHTML
     );
-    Slider(
-      utils.getEle(".portfolio .list"),
-      HomeContent.portfolio.list,
-      portfolioListHTML,
-      360,
-      420
+
+    loadPortfolio(HomeContent.portfolio.list);
+
+    utils.getEleAll(".tags > div").forEach((ele) =>
+      ele.addEventListener(
+        "click", ((e) => {
+          selectedTag = e.target.innerHTML.toLowerCase();
+          utils.getEleAll(".tags > div").forEach(e => {
+            e.classList.remove("selected");
+            if(e.innerHTML.toLowerCase() === selectedTag) e.classList.add("selected");
+          })
+          loadPortfolio(
+            selectedTag === "all"
+              ? HomeContent.portfolio.list
+              : HomeContent.portfolio.list.filter(item => item.type.toLowerCase() === selectedTag)
+          );
+        })
+      )
     );
     utils.onScroll(onScroll);
   };

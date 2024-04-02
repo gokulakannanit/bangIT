@@ -104,7 +104,7 @@ export const HomeContent = {
       {
         title: "Retail & Digital Commerce",
         desc: "We provide Advanced UX/UI Research, Agile Development Process, Integration with IoT, AI, ML and AR Solutions and Native",
-        type: "retail",
+        type: "ecommerce",
         image: "/public/images/service/AI.jpg"
       },
       {
