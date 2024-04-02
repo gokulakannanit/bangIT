@@ -32,6 +32,7 @@
       height: 40px;
       background-color: var(--light_bg);
       cursor: pointer;
+      border: 1px solid #ccc;
       .fa {
         transform: translate(calc(50% + 8px), calc(50% - 2px));
       }

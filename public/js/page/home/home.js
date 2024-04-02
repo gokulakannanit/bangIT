@@ -175,27 +175,29 @@ export default (main) => {
 
   const testimonialListHTML = (item) => {
     return `<div class="list_item flex_box">
-          <div class="left_content">
-            <img alt="" src="${item.image}" width="150px" height="150px" />
-            <div class="quote">
-              <i class="fa fa-quote-left font_primary"></i>
+          <div class="flex_box">
+            <div class="left_content">
+              <img alt="" src="${item.image}" width="150px" height="150px" />
+              <div class="quote">
+                <i class="fa fa-quote-left font_primary"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="font_primary">${item.name}</h3>
+              <h3>${item.place}</h3>
+              <p class="star">
+                ${[1, 2, 3, 4, 5]
+                  .map(
+                    (index) =>
+                      `<i class="fa fa-star ${
+                        index <= item.rating ? "checked" : ""
+                      }"></i>`
+                  )
+                  .join("")}
+              </p>
             </div>
           </div>
-          <div>
-            <h3 class="font_primary">${item.name}</h3>
-            <h3>${item.place}</h3>
-            <p class="star">
-              ${[1, 2, 3, 4, 5]
-                .map(
-                  (index) =>
-                    `<i class="fa fa-star ${
-                      index <= item.rating ? "checked" : ""
-                    }"></i>`
-                )
-                .join("")}
-            </p>
-            <p>${item.desc}</p>
-          </div>
+          <p>${item.desc}</p>
         </div>`;
   };
 
@@ -224,7 +226,8 @@ export default (main) => {
     Slider(
       utils.getEle(".testimonial_list"),
       HomeContent.testimonial.list,
-      testimonialListHTML
+      testimonialListHTML,
+      380
     );
 
     loadPortfolio(HomeContent.portfolio.list);

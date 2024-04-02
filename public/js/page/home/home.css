@@ -242,7 +242,7 @@
       border-left: 4px dotted;
     }
     .testimonial_list .list_item {
-      padding: 20px 40px;
+      padding: 20px;
       background-color: var(--dark_bg);
       background-image: url("/public/images/banner/2.png");
       color: var(--light_font);
