@@ -369,6 +369,7 @@
       display: flex;
       gap: 20px;
       justify-content: center;
+      flex-wrap: wrap;
       > div {
         border-radius: 8px;
         min-width: 100px;
