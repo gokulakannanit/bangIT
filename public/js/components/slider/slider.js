@@ -64,16 +64,16 @@ export const Slider = (ele, list, htmlFn, minWidth = 360, Height = 'auto') => {
     const sliderEle = utils.getEle(".list .slider", ele);
     const listItemEle = utils.getEle(".list .slider li", ele);
 
-    console.log(minWidth, ' : ', listEle.clientWidth);
     resetAllWidth((minWidth >= listEle.clientWidth) ? listEle.clientWidth : minWidth);
 
     if(Height !== 'auto') sliderEle.style.height = Height + "px";
 
     const fullWidth = listEle.clientWidth;
-    const eleWidth = listItemEle.clientWidth;
+    const eleWidth = listItemEle.clientWidth + 10;
     const reminder = fullWidth % eleWidth;
     const showCount = Math.floor(fullWidth / eleWidth);
     sliderEle.style.left = "0px";
+    
     let newWidth = (minWidth >= listEle.clientWidth) ? listEle.clientWidth : minWidth,
       gap = 20 + (fullWidth - 420 - 40);
     if (showCount === 1) {
@@ -83,7 +83,7 @@ export const Slider = (ele, list, htmlFn, minWidth = 360, Height = 'auto') => {
       }
       resetAllWidth(newWidth);
     } else {
-      gap = reminder / showCount;
+      gap = Math.max((reminder / showCount), 20);
     }
     utils
       .getEleAll(".list .slider li", ele)

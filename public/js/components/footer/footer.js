@@ -2,6 +2,10 @@ import { util, logoHTML, navHTML, loadCss } from "../../util.js";
 
 loadCss("/public/js/components/footer/footer.css");
 
+const minimize = ((e) => {
+    e.currentTarget.parentElement.parentElement.classList.toggle('minimize');
+});
+
 const htmlString = `
     <div class="footer">
         <div class="container flex_box">
@@ -20,12 +24,12 @@ const htmlString = `
                     </p>
                 </div>
             </div>
-            <div class="footer_info">
-                <h3 class="font_primary">Navigation</h3>
+            <div class="footer_info minimize">
+                <h3 class="font_primary">Navigation <button class="icon_button"><i class="fa fa-angle-down"></i></button></h3>
                 <div class="nav"></div>
             </div>
-            <div class="footer_info">
-                <h3 class="font_primary">Contact Info</h3>
+            <div class="footer_info minimize">
+                <h3 class="font_primary">Contact Info<button class="icon_button"><i class="fa fa-angle-down"></i></button></h3>
                 <ul>
                     <li>
                         <a href="tel:" class="address"> <i class="fa fa-phone"></i><span>(123) 45678910</span></a>
@@ -55,6 +59,7 @@ export const Footer = (ele) => {
   const utils = util();
   utils.adddHtml(ele, htmlString);
   utils.adddHtml(utils.getEle(".footer_info .nav"), `${navHTML()}`);
+  utils.getEleAll(".icon_button", ele).forEach(ele=>ele.addEventListener("click", minimize));
   window.addEventListener("scroll", ()=>{
     const scrollButton = utils.getEle("#scroll_button");
     utils.addClass(scrollButton, "hide");

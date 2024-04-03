@@ -7,6 +7,18 @@
   .footer_info {
     padding: 20px;
     max-width: 340px;
+    height: auto;
+    transition: height .3s ease-in-out;
+    h3 {
+      display: flex;
+      justify-content: space-between;
+      .icon_button {
+        border: none;
+        cursor: pointer;
+        display: none;
+      }
+    }
+    
     ul {
       margin-top: 20px;
       flex-wrap: wrap;
@@ -91,6 +103,14 @@
 @media (max-width: 600px) {
   footer {
     .footer_info {
+      min-width: calc(100% - 40px);
+      &.minimize{
+        height: 40px;
+        overflow: hidden;           
+      }
+      .icon_button {
+        display: initial !important;
+      }
       &:first-child {
         .logo {
           img {
