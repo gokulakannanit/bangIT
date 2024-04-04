@@ -83,6 +83,11 @@ const testimonialHTML = (({ title, desc }) => {
   `;
 })(HomeContent.testimonial);
 
+const expand = (e, className) => {
+  console.log(className, ' : ', e.target.parentElement);
+  e.target.parentElement.querySelector('.block').classList.toggle('expand_small');
+};
+
 const benefitsHTML = (({ title, desc, block, list }) => {
   return `
     <section class="benefits container">
@@ -95,7 +100,8 @@ const benefitsHTML = (({ title, desc, block, list }) => {
             return `<div>
             <h3 class="font_primary">${item.title}</h3>
             <p>${item.desc}</p>
-            <p>${item.block}</p>
+            <a href="javascript:void(0);" class="show_small font_primary" onclick="(${expand})(event, 'block')">More detail <i class="fa fa-angle-down"></i></a>
+            <p class="block minimize_small">${item.block}</p>
         </div>`;
           })
           .join("")}
@@ -124,12 +130,9 @@ const portfolioHTML = (({ title, desc, list }) => {
                 ["all"]
               )
             )
-              .map((item) => {
-                console.log(item.toLowerCase(), " = ", selectedTag);
-                return selectedTag === item.toLowerCase()
+              .map((item) =>  selectedTag === item.toLowerCase()
                   ? `<div class="selected">${item}</div>`
-                  : `<div>${item}</div>`;
-              })
+                  : `<div>${item}</div>`)
               .join("")}
         </div>
         <div class="list"></div>

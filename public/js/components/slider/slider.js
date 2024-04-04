@@ -69,22 +69,18 @@ export const Slider = (ele, list, htmlFn, minWidth = 360, Height = 'auto') => {
     if(Height !== 'auto') sliderEle.style.height = Height + "px";
 
     const fullWidth = listEle.clientWidth;
-    const eleWidth = listItemEle.clientWidth + 10;
+    const eleWidth = listItemEle.clientWidth + 9;
     const reminder = fullWidth % eleWidth;
     const showCount = Math.floor(fullWidth / eleWidth);
     sliderEle.style.left = "0px";
-    
+
     let newWidth = (minWidth >= listEle.clientWidth) ? listEle.clientWidth : minWidth,
-      gap = 20 + (fullWidth - 420 - 40);
-    if (showCount === 1) {
-      if (fullWidth < 440) {
-        newWidth = fullWidth - 20;
-        gap = 20;
-      }
-      resetAllWidth(newWidth);
-    } else {
       gap = Math.max((reminder / showCount), 20);
-    }
+    if (showCount === 1) {
+      gap = 20;
+      newWidth = fullWidth - 20;
+      resetAllWidth(newWidth);
+    } 
     utils
       .getEleAll(".list .slider li", ele)
       .forEach((e) => (e.style.margin = "0 " + gap / 2 + "px"));
