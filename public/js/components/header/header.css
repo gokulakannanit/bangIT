@@ -84,12 +84,13 @@
       }
       .menu {
         position: fixed;
-        right: -300px;
+        right: -220px;
         top: 0;
         height: 100%;
         background-color: var(--light_bg);
         z-index: 11;
-        min-width: 300px;
+        min-width: 220px;
+        max-width: 220px;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
         -webkit-font-smoothing: antialiased;
         transition: all 0.3s ease-out;

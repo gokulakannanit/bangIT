@@ -12,7 +12,7 @@
   --light_font: #ececec;
   --dark_bg: #222;
   --alpha_bg_white: rgba(255, 255, 255, 0.4);
-  --alpha_bg_dark: rgba(255, 255, 255, 0.2);
+  --alpha_bg_dark: rgba(0, 0, 0, 0.8);
 }
 
 html,
